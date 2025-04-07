@@ -12,13 +12,20 @@ const router = createRouter({
 router.beforeEach((to, _, next) => {
   const authStore = useAuthStore();
 
-
   // Ruta protegida
-  if (to.meta.requiresAuth && !authStore.isAuthenticated && !localStorage.getItem('token')) {
+  if (
+    to.meta.requiresAuth &&
+    !authStore.isAuthenticated &&
+    !localStorage.getItem("token")
+  ) {
     next({ name: ROUTE_NAMES.LOGIN });
   }
   // Ruta solo para invitados (ej: login/register)
-  else if (to.meta.guestOnly && authStore.isAuthenticated && localStorage.getItem('token')) {
+  else if (
+    to.meta.guestOnly &&
+    authStore.isAuthenticated &&
+    localStorage.getItem("token")
+  ) {
     next({ name: ROUTE_NAMES.LOGIN });
   } else {
     next();

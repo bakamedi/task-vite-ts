@@ -175,7 +175,7 @@ export const useTaskStore = defineStore("task", {
         limit: this.limit ?? 10,
         ...(search && { search: search.trim() }), // Solo añade search si hay término
       };
-  
+
       await this.getTasks(params);
     },
   },

@@ -46,7 +46,6 @@ import { useNotification } from "./../../../shared/composables/useNotification";
 
 const { success, error } = useNotification();
 
-
 const {
   isModalVisible,
   currentTask,

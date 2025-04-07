@@ -1,6 +1,6 @@
-import { computed } from 'vue';
-import { useAuthStore } from '../stores/auth.store';
-import type { LoginRequest, RegisterRequest } from '../types/auth.types';
+import { computed } from "vue";
+import { useAuthStore } from "../stores/auth.store";
+import type { LoginRequest, RegisterRequest } from "../types/auth.types";
 
 export const useAuth = () => {
   const authStore = useAuthStore();
@@ -16,9 +16,9 @@ export const useAuth = () => {
       await authStore.login(credentials);
       return { success: true };
     } catch (error) {
-      return { 
-        success: false, 
-        error: (error as Error).message || 'Login failed' 
+      return {
+        success: false,
+        error: (error as Error).message || "Login failed",
       };
     }
   };
@@ -28,9 +28,9 @@ export const useAuth = () => {
       await authStore.register(userData);
       return { success: true };
     } catch (error) {
-      return { 
-        success: false, 
-        error: (error as Error).message || 'Registration failed' 
+      return {
+        success: false,
+        error: (error as Error).message || "Registration failed",
       };
     }
   };
@@ -44,7 +44,7 @@ export const useAuth = () => {
     user,
     isAuthenticated,
     isLoading,
-    
+
     // Métodos
     login,
     register,

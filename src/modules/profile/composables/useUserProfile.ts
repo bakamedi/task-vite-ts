@@ -16,7 +16,7 @@ export const useUserProfile = () => {
     updateProfile: profileStore.updateProfile,
     onChangeUserProfile: profileStore.onChangeUserProfile,
     // Estados
-    userProfile : user,
+    userProfile: user,
     isLoading,
     showDreawerProfile,
   };

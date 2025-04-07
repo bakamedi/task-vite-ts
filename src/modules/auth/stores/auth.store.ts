@@ -21,7 +21,7 @@ export const useAuthStore = defineStore("auth", {
       try {
         const response = await apiLogin(payload);
         this.token = response.data.token;
-        localStorage.setItem('token', this.token);
+        localStorage.setItem("token", this.token);
       } finally {
         this.isLoading = false;
       }
@@ -38,7 +38,7 @@ export const useAuthStore = defineStore("auth", {
     logout() {
       this.user = null;
       this.token = null;
-      localStorage.removeItem('token');
+      localStorage.removeItem("token");
     },
   },
   getters: {
