@@ -39,6 +39,7 @@ import router from "../../../core/router";
 
 import ProfileForm from "../../profile/components/ProfileForm.vue";
 import { useUserProfile } from "../composables/useUserProfile";
+import { useNotification } from "./../../../shared/composables/useNotification";
 
 const { logout } = useAuth();
 const {
@@ -49,7 +50,6 @@ const {
   updateProfile,
 } = useUserProfile();
 
-import { useNotification } from "./../../../shared/composables/useNotification";
 const { success, error } = useNotification();
 
 const handleUpdateProfile = async () => {

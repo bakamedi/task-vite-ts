@@ -20,13 +20,17 @@
 </template>
 <script lang="ts" setup>
 import { useTask } from "../composables/useTask";
+import { useNotification } from "./../../../shared/composables/useNotification";
+
 const { isDeleteModalVisible, currentTask, closeModal, deleteTask } = useTask();
+const { success, error } = useNotification();
 
 const handleDeleteTask = async () => {
   if (currentTask.value) {
     if (currentTask.value.id) {
       await deleteTask(currentTask.value.id);
       closeModal();
+      success("Tarea eliminada correctamente");
       return;
     }
     closeModal();
