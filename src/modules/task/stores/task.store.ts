@@ -121,7 +121,6 @@ export const useTaskStore = defineStore("task", {
     async deleteTask(taskId: string): Promise<void> {
       const response = await apiDeleteById(taskId);
       if (!response) {
-        console.error("Error deleting task");
         return Promise.resolve();
       }
       this.tasksResp.data = this.tasksResp.data.filter(
@@ -169,10 +168,8 @@ export const useTaskStore = defineStore("task", {
     },
     onChangeFilterStatus(status: {} | null): void {
       this.filteredStatus = status;
-      console.log(this.filteredStatus);
     },
     async onChangeSearchTask(search: string): Promise<void> {
-      console.log(search);
       const params: PaginationParams = {
         page: this.page ?? 1,
         limit: this.limit ?? 10,

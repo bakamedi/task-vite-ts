@@ -64,7 +64,6 @@ const formState = ref<Task>({
 });
 
 const handleSubmit = async () => {
-  console.log("formState.value", formState.value);
   if (currentTask.value?.id !== undefined && currentTask.value?.id !== "") {
     await updateTask(formState.value);
     success("Tarea actualizada correctamente");

@@ -76,8 +76,6 @@ const handleTableChange = async (
     completed: boolean[];
   }
 ) => {
-  console.log(filters);
-
   onChangeFilterStatus(filters.completed);
   // if (pag.current == page.value) {
   //   return;
@@ -97,7 +95,6 @@ const handleTableChange = async (
     pag.current = 1;
     pag.pageSize = 10;
     const completed = filters.completed[0];
-    console.log(completed);
     await getAll({
       page: pag.current ?? 1,
       limit: pag.pageSize ?? 10,
@@ -105,7 +102,6 @@ const handleTableChange = async (
     });
     return;
   } else {
-    console.log("No hay filtros");
     pag.current = 1;
     pag.pageSize = 10;
     onChangeFilterStatus(null);

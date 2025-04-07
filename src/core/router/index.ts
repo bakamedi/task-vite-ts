@@ -12,9 +12,6 @@ const router = createRouter({
 router.beforeEach((to, _, next) => {
   const authStore = useAuthStore();
 
-  console.log(to.meta.requiresAuth);
-  console.log(!authStore.isAuthenticated);
-  
 
   // Ruta protegida
   if (to.meta.requiresAuth && !authStore.isAuthenticated && !localStorage.getItem('token')) {
