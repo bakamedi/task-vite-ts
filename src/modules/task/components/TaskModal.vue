@@ -42,6 +42,10 @@
 import { ref, watch } from "vue";
 import type { Task } from "../types/task.types";
 import { useTask } from "../composables/useTask";
+import { useNotification } from "./../../../shared/composables/useNotification";
+
+const { success, error } = useNotification();
+
 
 const {
   isModalVisible,
@@ -63,8 +67,10 @@ const handleSubmit = async () => {
   console.log("formState.value", formState.value);
   if (currentTask.value?.id !== undefined && currentTask.value?.id !== "") {
     await updateTask(formState.value);
+    success("Tarea actualizada correctamente");
   } else {
     await createTask(formState.value);
+    success("Tarea creada correctamente");
   }
 };
 
