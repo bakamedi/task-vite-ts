@@ -44,7 +44,7 @@ import type { Task } from "../types/task.types";
 import { useTask } from "../composables/useTask";
 import { useNotification } from "./../../../shared/composables/useNotification";
 
-const { success, error } = useNotification();
+const { success } = useNotification();
 
 const {
   isModalVisible,

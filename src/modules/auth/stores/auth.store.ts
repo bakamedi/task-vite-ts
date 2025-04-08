@@ -16,7 +16,7 @@ export const useAuthStore = defineStore("auth", {
     isLoading: false,
   }),
   actions: {
-    async login(payload: LoginRequest) {
+    async login(payload: LoginRequest): Promise<void> {
       this.isLoading = true;
       try {
         const response = await apiLogin(payload);
@@ -26,7 +26,7 @@ export const useAuthStore = defineStore("auth", {
         this.isLoading = false;
       }
     },
-    async register(payload: RegisterRequest) {
+    async register(payload: RegisterRequest): Promise<void> {
       this.isLoading = true;
       try {
         const response = await apiRegister(payload);
@@ -39,7 +39,7 @@ export const useAuthStore = defineStore("auth", {
         this.isLoading = false;
       }
     },
-    logout() {
+    logout(): void {
       this.user = null;
       this.token = null;
       localStorage.removeItem("token");
