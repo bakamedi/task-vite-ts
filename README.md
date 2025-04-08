@@ -1,5 +1,14 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite + Pinia
 
+## WEB Task
+
+## Authentication
+
+![WEB Task](assets/auth.png)
+
+## Home
+
+![WEB Task](assets/home.png)
 
 ## Description
 
