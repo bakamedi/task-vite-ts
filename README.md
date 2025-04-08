@@ -42,6 +42,13 @@ src/                           # Código fuente principal
 ├── style.css                  # Estilos globales
 └── vite-env.d.ts              # Tipos personalizados para el entorno Vite
 ```
+
+# The Project use Ant-Design for the UI Components
+
+```bash
+$ https://www.antdv.com/components/overview
+```
+
 ## Create env
 ### Can you see the example in the file env.example
 
