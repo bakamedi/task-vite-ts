@@ -6,6 +6,7 @@ export interface RegisterRequest {
   firstName: string;
   lastName: string;
   password: string;
+  confirmPassword: string;
 }
 
 // Tipos para el login (Login)

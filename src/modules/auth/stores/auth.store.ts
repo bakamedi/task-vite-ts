@@ -31,6 +31,10 @@ export const useAuthStore = defineStore("auth", {
       try {
         const response = await apiRegister(payload);
         this.token = response.data.token;
+        localStorage.setItem("token", this.token);
+      } catch (error) {
+        console.error("Registration error:", error);
+        throw error; // Rethrow the error to handle it in the component if needed
       } finally {
         this.isLoading = false;
       }

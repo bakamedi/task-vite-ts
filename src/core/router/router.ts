@@ -11,7 +11,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: "/login",
     name: ROUTE_NAMES.LOGIN,
-    component: () => import("./../../modules/auth/components/LoginForm.vue"),
+    component: () => import("./../../modules/auth/components/ChooseAuth.vue"),
     meta: { guestOnly: true },
   },
 ];

@@ -10,11 +10,15 @@ const apiName = "/auth/";
 export const register = async (
   payload: RegisterRequest
 ): Promise<AuthResponse> => {
-  const response = await apiClient.post<AuthResponse>(
-    `${apiName}register`,
-    payload
-  );
-  return response.data;
+  try {
+    const response = await apiClient.post<AuthResponse>(
+      `${apiName}register`,
+      payload
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const login = async (payload: LoginRequest): Promise<AuthResponse> => {

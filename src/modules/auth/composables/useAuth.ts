@@ -26,11 +26,11 @@ export const useAuth = () => {
   const register = async (userData: RegisterRequest) => {
     try {
       await authStore.register(userData);
-      return { success: true };
+      return { done: true };
     } catch (error) {
       return {
         success: false,
-        error: (error as Error).message || "Registration failed",
+        failure: (error as Error).message || "Registration failed",
       };
     }
   };

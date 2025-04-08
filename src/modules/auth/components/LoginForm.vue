@@ -44,9 +44,6 @@ const handleSubmit = async () => {
               placeholder="ejemplo@dominio.com"
               size="large"
             >
-              <template #prefix>
-                <mail-outlined />
-              </template>
             </a-input>
           </a-form-item>
 
@@ -61,9 +58,6 @@ const handleSubmit = async () => {
               placeholder="••••••••"
               size="large"
             >
-              <template #prefix>
-                <lock-outlined />
-              </template>
             </a-input-password>
           </a-form-item>
 
