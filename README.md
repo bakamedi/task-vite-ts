@@ -12,6 +12,12 @@
 
 ## Description
 
+This project use this repo for api-server
+
+```bash
+$ git clone https://github.com/bakamedi/api-clean-task.git
+```
+
 Framework Vue repository of Web TASK.
 ```bash
 src/                           # Código fuente principal
