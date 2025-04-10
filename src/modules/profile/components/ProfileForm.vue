@@ -3,6 +3,7 @@
     <a-skeleton active />
   </template>
   <template v-else>
+    <ImgForm></ImgForm>
     <a-form :model="formState" layout="vertical" class="profile-form">
       <a-row :gutter="[16, 8]">
         <!-- Nombre - Ocupa 24 columnas en móvil, 12 en desktop -->
@@ -51,6 +52,7 @@
 import { onMounted, ref } from "vue";
 import type { User } from "../../../shared/types/user.types";
 import { useUserProfile } from "../composables/useUserProfile";
+import ImgForm from "./ImgForm.vue";
 
 const { userProfile, isLoading, getProfile, onChangeUserProfile } =
   useUserProfile();

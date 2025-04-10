@@ -48,7 +48,8 @@ const columns = ref([
   {
     title: "Acciones",
     key: "actions",
-    width: "10%",
+    width: "100",
+    fixed: 'right',
   },
 ]);
 
@@ -121,6 +122,7 @@ const handleTableChange = async (
       :data-source="tasksResp.data"
       :pagination="antPagination"
       :loading="isLoadingTable"
+      :scroll="{ x: 1500 }"
       bordered
       @change="handleTableChange"
     >
