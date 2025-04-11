@@ -20,6 +20,10 @@ const credentials = ref<RegisterRequest>({
 });
 
 const handleSubmit = async () => {
+  if(credentials.value.password !== credentials.value.confirmPassword) {
+    error("Las contraseñas no coinciden");
+    return;
+  }
   const { done, failure } = await register(credentials.value);
 
   if (done) {
