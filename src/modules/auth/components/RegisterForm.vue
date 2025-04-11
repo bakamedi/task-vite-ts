@@ -36,7 +36,7 @@ const handleSubmit = async () => {
   <a-row type="flex" justify="center" align="middle" class="login-container">
     <a-col :xs="24" :sm="12" :md="8" :lg="6">
       <a-card title="Registro de Usuario" class="login-card">
-        <a-form layout="vertical" :model="credentials" @finish="">
+        <a-form layout="vertical" :model="credentials" @finish="handleSubmit">
           <!-- Email -->
           <a-form-item
             label="Correo electrónico"
@@ -133,7 +133,6 @@ const handleSubmit = async () => {
               size="large"
               :loading="isLoading"
               block
-              @click="handleSubmit"
             >
               Registrar
             </a-button>

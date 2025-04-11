@@ -20,10 +20,9 @@ router.beforeEach((to, _, next) => {
     !localStorage.getItem("token")
   ) {
     next({ name: ROUTE_NAMES.LOGIN });
-  }
-  else if (
+  } else if (
     to.meta.guestOnly &&
-    isAuthenticated&&
+    isAuthenticated &&
     localStorage.getItem("token")
   ) {
     // Si está autenticado, redirigir al home
