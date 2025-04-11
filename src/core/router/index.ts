@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { useAuthStore } from "../../modules/auth/stores/auth.store";
 import { routes } from "./router";
 import { ROUTE_NAMES } from "./route-names";
+import { useAuthenticaded } from "../../shared/composables/useAuthenticaded";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,23 +10,24 @@ const router = createRouter({
 
 // Guardia global de navegación
 router.beforeEach((to, _, next) => {
-  const authStore = useAuthStore();
+  const { isAuthenticated } = useAuthenticaded();
 
+  // Ruta solo para invitados (ej: login/register)
   // Ruta protegida
   if (
     to.meta.requiresAuth &&
-    !authStore.isAuthenticated &&
+    !isAuthenticated &&
     !localStorage.getItem("token")
   ) {
     next({ name: ROUTE_NAMES.LOGIN });
   }
-  // Ruta solo para invitados (ej: login/register)
   else if (
     to.meta.guestOnly &&
-    authStore.isAuthenticated &&
+    isAuthenticated&&
     localStorage.getItem("token")
   ) {
-    next({ name: ROUTE_NAMES.LOGIN });
+    // Si está autenticado, redirigir al home
+    next({ name: ROUTE_NAMES.HOME });
   } else {
     next();
   }
