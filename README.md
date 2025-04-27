@@ -1,4 +1,10 @@
 # Vue 3 + TypeScript + Vite + Pinia
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="Vue 3" width="80"/>
+  <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" width="80"/>
+  <img src="https://vitejs.dev/logo-with-shadow.png" alt="Vite" width="80"/>
+  <img src="https://pinia.vuejs.org/logo.svg" alt="Pinia" width="80"/>
+</p>
 
 ## WEB Task
 
